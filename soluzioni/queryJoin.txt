@@ -19,3 +19,10 @@ FROM `teachers`
 JOIN `course_teacher` ON `course_teacher`.`teacher_id` = `teachers`.`id` 
 JOIN `degrees` ON `degrees`.`id` = `course_teacher`.`teacher_id` 
 WHERE `teachers`.`id` = 44; 
+
+//soluzione 4
+SELECT `students`.`id`, `students`.`name`, `students`.`surname`, `degrees`.`name` as `corso_di_laurea`, `departments`.`name` as `dipartimento_corso` 
+FROM `students` 
+JOIN `degrees` ON `students`.`id` = `degrees`.`department_id` 
+JOIN `departments` ON `degrees`.`department_id` = `departments`.`id` 
+ORDER BY `students`.`surname` ASC 
