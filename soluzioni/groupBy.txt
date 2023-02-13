@@ -1,0 +1,20 @@
+//soluzione 1
+SELECT COUNT(`id`), EXTRACT(year FROM `enrolment_date`) 
+FROM `students` 
+GROUP BY EXTRACT(year FROM `enrolment_date`); 
+
+//soluzione 2
+SELECT COUNT(`name`) as `num_insegnanti`, `teachers`.`office_number` 
+FROM `teachers` 
+GROUP BY `teachers`.`office_number`; 
+
+
+//soluzione 3
+SELECT AVG(`exam_student`.`vote`) as `media_voto`, `exam_student`.`exam_id` 
+FROM `exam_student` 
+GROUP BY `exam_student`.`exam_id`; 
+
+//soluzione 4
+SELECT COUNT(`department_id`) as `num_corsi_laurea`, `departments`.`name` FROM `degrees` 
+JOIN `departments` ON `departments`.`id` = `degrees`.`department_id` 
+GROUP BY `degrees`.`department_id`; 
