@@ -11,7 +11,7 @@ WHERE `cfu` > 10;
 \\SOLUZIONE 3
 SELECT * 
 FROM `students` 
-WHERE YEAR(`date_of_birth`) < 1993;
+WHERE TIMESTAMPDIFF(YEAR, `date_of_birth`, CURDATE()) > 30;
 
 \\SOLUZIONE 4
 SELECT `year`, `period` 
